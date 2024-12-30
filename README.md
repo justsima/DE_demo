@@ -1,6 +1,6 @@
 # 📚 **Data Engineering Take-Home Assignment**
 
-## 📝 **1. Introduction**
+## 📝 **1. Introduction** (#1-introduction) 
 
 ### **Project Overview**
 
@@ -49,7 +49,7 @@ The main objectives of this project are:
 
 ---
 
-# ⚙️ **3. Project Setup**
+# ⚙️ **3. Project Setup** (#2-project-setup)
 
 ### **Objective**
 
@@ -91,7 +91,7 @@ DE_demo/
 └── requirements.txt → Python dependencies
 ```
 
-# 🛢️ **4. Data Ingestion**
+# 🛢️ **4. Data Ingestion** (#3-data-ingestion)
 
 ### **Objective**
 
@@ -127,7 +127,7 @@ print(users_df.info())
 print(products_df.info())
 ```
 
-# 🛢️ **5. Database Design and Staging Tables**
+# 🛢️ **5. Database Design and Staging Tables** (#4-database-design-and-staging-tables)
 
 ### **Objective**
 
@@ -174,7 +174,7 @@ WHERE table_name = 'stg_products';
 
 ```
 
-# 🚛 **6. Data Loading to Staging Area**
+# 🚛 **6. Data Loading to Staging Area** (#5-data-loading-to-staging-area)
 
 ### **Objective**
 
@@ -210,7 +210,7 @@ products_df.to_sql('stg_products', engine, if_exists='replace', index=False)
 print("Data successfully loaded into staging tables.")
 ```
 
-# 📊 **7. Dimension and Fact Tables**
+# 📊 **7. Dimension and Fact Tables** (#6-dimension-and-fact-tables)
 
 ### **Objective**
 
@@ -362,7 +362,7 @@ The transition from staging tables to analytical tables represents the **core tr
 
 ---
 
-# 📊 **8. Data Analysis and Insights**
+# 📊 **8. Data Analysis and Insights** (#7-data-analysis-and-insights)
 
 ### **Objective**
 
@@ -409,7 +409,7 @@ ORDER BY TotalRevenue DESC
 LIMIT 5;
 ```
 
-# 🛡️ **9. Final Validations and Integrity Checks**
+# 🛡️ **9. Final Validations and Integrity Checks** (#8-final-validations-and-integrity-checks)
 
 ### **Objective**
 
@@ -453,7 +453,7 @@ FROM fact_transactions
 WHERE ProductID NOT IN (SELECT ProductID FROM dim_products);
 ```
 
-# 📝 **10. Conclusion**
+# 📝 **10. Conclusion** (#9-conclusion)
 
 ### **Objective**
 
@@ -519,7 +519,7 @@ The primary objectives achieved include:
 
 ---
 
-## 📝 **10.6 Final Thoughts**
+## 📝 **10.6 Final Thoughts** (#10-lessons-learned)
 
 This project successfully delivered a **structured, validated, and insightful data engineering pipeline**. The combination of **Python for data processing**, **PostgreSQL for database management**, and **Jupyter Notebook for analysis and visualization** provided an effective framework for solving the given problem.
 
