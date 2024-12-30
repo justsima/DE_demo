@@ -1,6 +1,6 @@
-# 📚 **Data Engineering Take-Home Assignment**
+# **Data Engineering Take-Home Assignment**
 
-## 📝 **1. Introduction** (#1-introduction) 
+## **1. Introduction**
 
 ### **Project Overview**
 
@@ -10,11 +10,11 @@ In this project, we developed a **robust data engineering pipeline** to process,
 
 The main objectives of this project are:
 
-- 📊 **Data Ingestion:** Import raw datasets from CSV files.
-- 🛢️ **Database Design:** Design staging, dimension, and fact tables in PostgreSQL.
-- 🚛 **Data Loading:** Load and validate data across different layers of the database.
-- 📈 **Data Analysis:** Extract meaningful insights through SQL queries and visualizations.
-- 🛡️ **Data Validation:** Ensure referential integrity, schema correctness, and data consistency.
+- **Data Ingestion:** Import raw datasets from CSV files.
+- **Database Design:** Design staging, dimension, and fact tables in PostgreSQL.
+- **Data Loading:** Load and validate data across different layers of the database.
+- **Data Analysis:** Extract meaningful insights through SQL queries and visualizations.
+- **Data Validation:** Ensure referential integrity, schema correctness, and data consistency.
 
 ### **Tools and Technologies Used**
 
@@ -34,7 +34,7 @@ The main objectives of this project are:
 
 ---
 
-## 🗺️ **2. Navigation**
+## **2. Navigation**
 
 - **[1. Introduction](#1-introduction)**
 - **[2. Project Setup](#2-project-setup)**
@@ -49,7 +49,7 @@ The main objectives of this project are:
 
 ---
 
-# ⚙️ **3. Project Setup** (#2-project-setup)
+# **3. Project Setup**
 
 ### **Objective**
 
@@ -57,7 +57,7 @@ This section outlines the **setup and configuration steps** required to prepare 
 
 ---
 
-## 🛠️ **3.1 Prerequisites**
+## **3.1 Prerequisites**
 
 Ensure the following tools and libraries are installed before proceeding:
 
@@ -91,7 +91,7 @@ DE_demo/
 └── requirements.txt → Python dependencies
 ```
 
-# 🛢️ **4. Data Ingestion** (#3-data-ingestion)
+# **4. Data Ingestion**
 
 ### **Objective**
 
@@ -99,7 +99,7 @@ In this step, we focus on **loading raw datasets** into Pandas DataFrames, perfo
 
 ---
 
-## 📊 **4.1 Loading Raw Datasets**
+## **4.1 Loading Raw Datasets**
 
 ### **Goal:**
 
@@ -127,7 +127,7 @@ print(users_df.info())
 print(products_df.info())
 ```
 
-# 🛢️ **5. Database Design and Staging Tables** (#4-database-design-and-staging-tables)
+# **5. Database Design and Staging Tables**
 
 ### **Objective**
 
@@ -135,7 +135,7 @@ In this step, we design and create **staging tables** in PostgreSQL. These table
 
 ---
 
-## 📝 **5.1 Staging Table Design**
+## **5.1 Staging Table Design**
 
 ### **Goal:**
 
@@ -174,7 +174,7 @@ WHERE table_name = 'stg_products';
 
 ```
 
-# 🚛 **6. Data Loading to Staging Area** (#5-data-loading-to-staging-area)
+# **6. Data Loading to Staging Area**
 
 ### **Objective**
 
@@ -182,7 +182,7 @@ In this step, we **load the cleaned datasets** from Pandas DataFrames into their
 
 ---
 
-## 📝 **6.1 Loading Data into Staging Tables**
+## **6.1 Loading Data into Staging Tables**
 
 ### **Goal:**
 
@@ -210,7 +210,7 @@ products_df.to_sql('stg_products', engine, if_exists='replace', index=False)
 print("Data successfully loaded into staging tables.")
 ```
 
-# 📊 **7. Dimension and Fact Tables** (#6-dimension-and-fact-tables)
+# **7. Dimension and Fact Tables**
 
 ### **Objective**
 
@@ -224,7 +224,7 @@ In this step:
 
 ---
 
-## 📝 **7.1 Why Dimension and Fact Tables?**
+## **7.1 Why Dimension and Fact Tables?**
 
 ### **Dimension Tables:**
 
@@ -253,7 +253,7 @@ By using **dimension and fact tables**, we improve:
 
 ---
 
-## 🛠️ **7.2 Designing Dimension Tables**
+## **7.2 Designing Dimension Tables**
 
 ### **Purpose:**
 
@@ -282,7 +282,7 @@ Dimension tables are derived from staging tables (`stg_users`, `stg_products`) a
 
 ---
 
-## ⚙️ **7.3 Designing the Fact Table**
+## **7.3 Designing the Fact Table**
 
 ### **Purpose:**
 
@@ -309,7 +309,7 @@ The fact table (`fact_transactions`) serves as the **central table** that links 
 
 ---
 
-## 🛡️ **7.4 Ensuring Referential Integrity**
+## **7.4 Ensuring Referential Integrity**
 
 ### **Purpose:**
 
@@ -328,7 +328,7 @@ To ensure **data consistency** across dimension and fact tables.
 
 ---
 
-## 🔍 **7.5 Validating Row Counts and Schema**
+## **7.5 Validating Row Counts and Schema**
 
 ### **Purpose:**
 
@@ -347,7 +347,7 @@ To ensure data was correctly transformed and loaded into dimension and fact tabl
 
 ---
 
-## 📝 **7.6 Summary**
+## **7.6 Summary**
 
 At the end of this step:
 
@@ -362,7 +362,7 @@ The transition from staging tables to analytical tables represents the **core tr
 
 ---
 
-# 📊 **8. Data Analysis and Insights** (#7-data-analysis-and-insights)
+# **8. Data Analysis and Insights**
 
 ### **Objective**
 
@@ -370,7 +370,7 @@ In this step, we **analyze the data** stored in the `dim_users`, `dim_products`,
 
 ---
 
-## 📝 **8.1 Why Data Analysis Matters?**
+## **8.1 Why Data Analysis Matters?**
 
 Data analysis converts raw data into **actionable insights**. By leveraging **dimension and fact tables**, we can:
 
@@ -382,7 +382,7 @@ The analysis will cover both **SQL-based analytical queries** and **visualizatio
 
 ---
 
-## ⚙️ **8.2 Analytical Queries**
+## **8.2 Analytical Queries**
 
 ### **Purpose:**
 
@@ -409,7 +409,7 @@ ORDER BY TotalRevenue DESC
 LIMIT 5;
 ```
 
-# 🛡️ **9. Final Validations and Integrity Checks** (#8-final-validations-and-integrity-checks)
+# **9. Final Validations and Integrity Checks** (#8-final-validations-and-integrity-checks)
 
 ### **Objective**
 
@@ -417,7 +417,7 @@ In this step, we perform **final checks** to ensure the entire data pipeline—f
 
 ---
 
-## 📝 **9.1 Why Final Validation Matters?**
+## **9.1 Why Final Validation Matters?**
 
 Final validations ensure that:
 
@@ -428,7 +428,7 @@ Final validations ensure that:
 
 ---
 
-## 🛡️ **9.2 Referential Integrity Validation**
+## **9.2 Referential Integrity Validation**
 
 ### **Purpose:**
 
@@ -453,7 +453,7 @@ FROM fact_transactions
 WHERE ProductID NOT IN (SELECT ProductID FROM dim_products);
 ```
 
-# 📝 **10. Conclusion** (#9-conclusion)
+# **10. Conclusion**
 
 ### **Objective**
 
@@ -461,7 +461,7 @@ In this final step, we **summarize the outcomes** of the data engineering pipeli
 
 ---
 
-## 📝 **10.1 Project Overview**
+## **10.1 Project Overview**
 
 This project aimed to design and implement a **robust data engineering pipeline** for processing, validating, and analyzing datasets using **Python, PostgreSQL, and Jupyter Notebook**.
 
@@ -476,7 +476,7 @@ The primary objectives achieved include:
 
 ---
 
-## 📊 **10.2 Key Achievements**
+## **10.2 Key Achievements**
 
 1. **Reliable Data Pipeline:**
 
@@ -498,7 +498,7 @@ The primary objectives achieved include:
 
 ---
 
-## 🛡️ **10.3 Challenges Encountered**
+## **10.3 Challenges Encountered**
 
 1. **Data Inconsistencies:**
 
@@ -519,7 +519,7 @@ The primary objectives achieved include:
 
 ---
 
-## 📝 **10.6 Final Thoughts** (#10-lessons-learned)
+## **10.6 Final Thoughts**
 
 This project successfully delivered a **structured, validated, and insightful data engineering pipeline**. The combination of **Python for data processing**, **PostgreSQL for database management**, and **Jupyter Notebook for analysis and visualization** provided an effective framework for solving the given problem.
 
