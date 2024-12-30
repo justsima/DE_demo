@@ -125,26 +125,33 @@ SELECT * FROM fact_transactions LIMIT 5;
 -- SECTION 6: SQL ANALYSIS FOR BUSINESS INSIGHTS
 -- ============================================
 
--- Top 5 Products by Quantity Sold
+-- Find the top 5 customers based on total spending
+SELECT u."CustomerID", u."Name", SUM(t."Quantity" * t."Price") AS TotalSpent
+FROM fact_transactions t
+JOIN dim_users u ON t."CustomerID" = u."CustomerID"
+GROUP BY u."CustomerID", u."Name"
+ORDER BY TotalSpent DESC
+LIMIT 5;
 
-SELECT p."ProductName", SUM(t."Quantity") AS total_quantity
+-- Identify the best-selling product in each category
+SELECT p."Category", p."ProductName", SUM(t."Quantity") AS TotalQuantity
 FROM fact_transactions t
 JOIN dim_products p ON t."ProductID" = p."ProductID"
-GROUP BY p."ProductName"
-ORDER BY total_quantity DESC
-LIMIT 5;
+GROUP BY p."Category", p."ProductName"
+ORDER BY p."Category", TotalQuantity DESC;
 
--- Top 5 Products by Revenue
-SELECT p."ProductName", SUM(t."Price") AS total_revenue
+-- Calculate the daily sales trend for the last 7 days
+SELECT t."TransactionDate"::DATE AS SalesDate, SUM(t."Quantity" * t."Price") AS DailySales
+FROM fact_transactions t
+WHERE t."TransactionDate" >= NOW() - INTERVAL '7 days'
+GROUP BY SalesDate
+ORDER BY SalesDate;
+
+-- Find the category with the highest sales in the last month
+SELECT p."Category", SUM(t."Quantity" * t."Price") AS TotalSales
 FROM fact_transactions t
 JOIN dim_products p ON t."ProductID" = p."ProductID"
-GROUP BY p."ProductName"
-ORDER BY total_revenue DESC
-LIMIT 5;
-
--- Customer Age Segmentation
-SELECT "Age", COUNT(*) AS customer_count
-FROM dim_users
-GROUP BY "Age"
-ORDER BY customer_count DESC
-LIMIT 5;
+WHERE t."TransactionDate" >= DATE_TRUNC('month', CURRENT_DATE)
+GROUP BY p."Category"
+ORDER BY TotalSales DESC
+LIMIT 1;
