@@ -2,18 +2,16 @@
 *🔗 For Short over view there is a 2-minute project walkthrough video, showcasing key steps and results. Check above in the folder.*
 
 ## **Navigation**
-
-- **[1. Introduction](#1-introduction)**
-- **[2. Project Setup](#2-project-setup)**
-- **[3. Data Ingestion](#3-data-ingestion)**
-- **[4. Database Design and Staging Tables](#4-database-design-and-staging-tables)**
-- **[5. Data Loading to Staging Area](#5-data-loading-to-staging-area)**
-- **[6. Dimension and Fact Tables](#6-dimension-and-fact-tables)**
-- **[7. Data Analysis and Insights](#7-data-analysis-and-insights)**
-- **[8. Final Validations and Integrity Checks](#8-final-validations-and-integrity-checks)**
-- **[9. Conclusion](#9-conclusion)**
-- **[10. Lessons Learned](#10-lessons-learned)**
-
+- [1. Introduction](#1-introduction)
+- [2. Project Setup](#2-project-setup)
+- [3. Data Ingestion](#3-data-ingestion)
+- [4. Database Design and Staging Tables](#4-database-design-and-staging-tables)
+- [5. Data Loading to Staging Area](#5-data-loading-to-staging-area)
+- [6. Dimension and Fact Tables](#6-dimension-and-fact-tables)
+- [7. Data Analysis and Insights](#7-data-analysis-and-insights)
+- [8. Final Validations and Integrity Checks](#8-final-validations-and-integrity-checks)
+- [9. Conclusion](#9-conclusion)
+- [10. Lessons Learned](#10-lessons-learned)
 ---
 ## **1. Introduction**
 
