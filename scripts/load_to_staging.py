@@ -1,4 +1,4 @@
-# load_to_stage.py
+# This file will help us load this data and new updates of the file directly from csv to staging tables in PostgreSQL.
 
 import pandas as pd
 from sqlalchemy import create_engine, text
