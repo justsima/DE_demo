@@ -150,7 +150,7 @@ Design staging tables to mirror the structure of the cleaned datasets from the p
 
 ---
 
-### **5.2 Create Staging Tables**
+### **5.2 Checking Staged Tables and validating schema**
 
 The staging tables are created in PostgreSQL using SQL.
 After that I did of validation the schema
