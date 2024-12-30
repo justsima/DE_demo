@@ -1,5 +1,5 @@
 # **Data Engineering Take-Home Assignment**
-
+*🔗 For Short over view there is a 2-minute project walkthrough video, showcasing key steps and results. Check above in the folder.*
 
 ## **Navigation**
 
