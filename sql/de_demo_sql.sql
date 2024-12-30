@@ -49,6 +49,8 @@ CREATE TABLE IF NOT EXISTS stg_products (
     StockQuantity INTEGER
 );
 select count(*) from stg_products;
+select count(*) from stg_users;
+select count(*) from stg_transactions;
 -- ============================================
 -- SECTION 3: DATA VALIDATION FOR STAGING TABLES
 -- ============================================
@@ -141,11 +143,14 @@ GROUP BY p."Category", p."ProductName"
 ORDER BY p."Category", TotalQuantity DESC;
 
 -- Calculate the daily sales trend for the last 7 days
-SELECT t."TransactionDate"::DATE AS SalesDate, SUM(t."Quantity" * t."Price") AS DailySales
+SELECT
+    DATE(t."TransactionDate") AS SalesDate,
+    SUM(t."Quantity" * t."Price") AS DailySales
 FROM fact_transactions t
-WHERE t."TransactionDate" >= NOW() - INTERVAL '7 days'
+WHERE t."TransactionDate" >= CURRENT_DATE - INTERVAL '7 days'
 GROUP BY SalesDate
 ORDER BY SalesDate;
+
 
 -- Find the category with the highest sales in the last month
 SELECT p."Category", SUM(t."Quantity" * t."Price") AS TotalSales
