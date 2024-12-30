@@ -4,9 +4,6 @@ import pandas as pd
 from sqlalchemy import create_engine, text
 import os
 
-# ---------------------------
-# 1. Environment Variables
-# ---------------------------
 # Ensure to create a .env file with appropriate credentials in your project directory.
 DB_USER = os.getenv('POSTGRES_USER', 'de_user')
 DB_PASSWORD = os.getenv('POSTGRES_PASSWORD', 'de_password')
@@ -17,9 +14,6 @@ DB_NAME = os.getenv('POSTGRES_DB', 'de_demo')
 # Database connection string
 DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
-# ---------------------------
-# 2. Load CSV Datasets
-# ---------------------------
 def load_csv_files():
     """
     Load datasets from CSV files into Pandas DataFrames.
@@ -34,10 +28,6 @@ def load_csv_files():
         print(f"❌ Error: {e}")
         raise
 
-
-# ---------------------------
-# 3. Database Connection
-# ---------------------------
 def get_db_connection():
     """
     Establish a connection to the PostgreSQL database.
@@ -51,10 +41,6 @@ def get_db_connection():
         print(f"❌ Database connection failed: {e}")
         raise
 
-
-# ---------------------------
-# 4. Load Data into Staging Tables
-# ---------------------------
 def load_to_staging(engine, transactions_df, users_df, products_df):
     """
     Load DataFrames into staging tables in PostgreSQL.
@@ -69,9 +55,6 @@ def load_to_staging(engine, transactions_df, users_df, products_df):
         raise
 
 
-# ---------------------------
-# 5. Validate Data Load
-# ---------------------------
 def validate_staging_tables(engine):
     """
     Validate row counts and schema integrity in staging tables.
@@ -91,10 +74,6 @@ def validate_staging_tables(engine):
         print(f"❌ Error during validation checks: {e}")
         raise
 
-
-# ---------------------------
-# 6. Main Function
-# ---------------------------
 def main():
     """
     Main function to orchestrate the pipeline.
@@ -118,9 +97,5 @@ def main():
     engine.dispose()
     print("✅ Pipeline execution completed successfully.")
 
-
-# ---------------------------
-# 7. Run Script
-# ---------------------------
 if __name__ == '__main__':
     main()
